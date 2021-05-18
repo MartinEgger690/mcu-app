@@ -13,7 +13,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.squareup.picasso.Picasso;
-import com.steggmar.mcu_app.api.MovieDataSet;
+import com.steggmar.mcu_app.api.ReleaseData;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,9 +27,9 @@ public class MainActivity extends AppCompatActivity {
 
     private Button btnNext;
 
-    private MovieDataSet movie;
-    private MovieDataSet nextMovie;
-    private MovieDataSet previousMovie;
+    private ReleaseData movie;
+    private ReleaseData nextMovie;
+    private ReleaseData previousMovie;
 
 
     @SuppressLint("SetTextI18n")
@@ -40,8 +40,8 @@ public class MainActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.movie_countdown);
 
-        this.movie = new MovieDataSet();
-        this.nextMovie = new MovieDataSet(this.movie.getRelease_date());
+        this.movie = new ReleaseData();
+        this.nextMovie = new ReleaseData(this.movie.getRelease_date());
         this.previousMovie = null;
 
         this.tvTitle = findViewById(R.id.tvTitle);
@@ -79,17 +79,17 @@ public class MainActivity extends AppCompatActivity {
 
         // this.previousMovie = this.movie;
         this.movie = this.nextMovie;
-        this.nextMovie = new MovieDataSet(this.movie.getRelease_date());
+        this.nextMovie = new ReleaseData(this.movie.getRelease_date());
         if(this.movie.getFollowing_production() == null){
             this.btnNext.setText("BACK TO START");
-            this.nextMovie = new MovieDataSet();
+            this.nextMovie = new ReleaseData();
         }
         updateView();
     }
 
     private void eventIvHome(){
-        this.movie = new MovieDataSet();
-        this.nextMovie = new MovieDataSet(this.movie.getRelease_date());
+        this.movie = new ReleaseData();
+        this.nextMovie = new ReleaseData(this.movie.getRelease_date());
         updateView();
     }
 

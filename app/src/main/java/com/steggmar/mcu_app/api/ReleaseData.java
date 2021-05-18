@@ -15,7 +15,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.TimeZone;
 
-public class MovieDataSet extends Thread {
+public class ReleaseData extends Thread {
 
     private String days_until;
     private String overview;
@@ -24,13 +24,13 @@ public class MovieDataSet extends Thread {
     private String title;
     private String type;
 
-    private MovieDataSet following_production;
+    private ReleaseData following_production;
 
     private String date;
     private JSONObject response;
 
     // Uses current date
-    public MovieDataSet(){
+    public ReleaseData(){
         @SuppressLint("SimpleDateFormat") DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm'Z'");
         df.setTimeZone(TimeZone.getTimeZone("UTC"));
         this.date = df.format(new Date());
@@ -43,7 +43,7 @@ public class MovieDataSet extends Thread {
     }
 
     // Uses given date
-    public MovieDataSet(String date){
+    public ReleaseData(String date){
         this.date = date;
         this.start();
         try {
@@ -54,7 +54,7 @@ public class MovieDataSet extends Thread {
     }
 
     // for following productions
-    private MovieDataSet(String days_until, String overview, String poster_url, String release_date, String title, String type) {
+    private ReleaseData(String days_until, String overview, String poster_url, String release_date, String title, String type) {
         this.days_until = days_until;
         this.overview = overview;
         this.poster_url = poster_url;
@@ -108,7 +108,7 @@ public class MovieDataSet extends Thread {
                 String release_date = following.getString("release_date");
                 String title = following.getString("title");
                 String type = following.getString("type");
-                this.following_production = new MovieDataSet(days_until, overview, poster_url, release_date, title, type);
+                this.following_production = new ReleaseData(days_until, overview, poster_url, release_date, title, type);
             } else {
                 this.following_production = null;
             }
@@ -132,6 +132,6 @@ public class MovieDataSet extends Thread {
     public String getRelease_date() { return release_date; }
     public String getTitle() { return title; }
     public String getType() { return type; }
-    public MovieDataSet getFollowing_production() { return following_production; }
+    public ReleaseData getFollowing_production() { return following_production; }
 
 }
