@@ -1,7 +1,8 @@
-package com.steggmar.mcu_app;
+package com.steggmar.mcu_app.activity;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -13,9 +14,10 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.squareup.picasso.Picasso;
+import com.steggmar.mcu_app.R;
 import com.steggmar.mcu_app.api.ReleaseData;
 
-public class MainActivity extends AppCompatActivity {
+public class CountdownActivity extends AppCompatActivity {
 
     private TextView tvTitle;
     private TextView tvReleasesInXDays;
@@ -88,9 +90,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void eventIvHome(){
-        this.movie = new ReleaseData();
-        this.nextMovie = new ReleaseData(this.movie.getRelease_date());
-        updateView();
+        startActivity(new Intent(CountdownActivity.this, MainActivity.class));
     }
 
     private void eventIvBack(){
