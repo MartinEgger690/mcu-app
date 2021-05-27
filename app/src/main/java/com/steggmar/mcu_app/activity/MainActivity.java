@@ -1,6 +1,7 @@
 package com.steggmar.mcu_app.activity;
 
 import android.content.Intent;
+import android.graphics.Movie;
 import android.os.Bundle;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -8,6 +9,7 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.steggmar.mcu_app.R;
+import com.steggmar.mcu_app.api.MovieData;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -34,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void eventLaunchSearch(){
-
+        startActivity(new Intent(MainActivity.this, SearchActivity.class));
     }
 
 

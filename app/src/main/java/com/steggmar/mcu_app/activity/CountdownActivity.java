@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.squareup.picasso.Picasso;
 import com.steggmar.mcu_app.R;
+import com.steggmar.mcu_app.api.MovieData;
 import com.steggmar.mcu_app.api.ReleaseData;
 
 public class CountdownActivity extends AppCompatActivity {
