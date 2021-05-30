@@ -32,11 +32,16 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void eventLaunchCountdown(){
-        startActivity(new Intent(MainActivity.this, CountdownActivity.class));
+        Intent intent = new Intent(MainActivity.this, CountdownActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+
     }
 
     private void eventLaunchSearch(){
-        startActivity(new Intent(MainActivity.this, SearchActivity.class));
+        Intent intent = new Intent(MainActivity.this, SearchActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
     }
 
 

@@ -9,6 +9,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.steggmar.mcu_app.R;
@@ -28,7 +29,7 @@ import java.util.ArrayList;
 
 public class SearchActivity extends AppCompatActivity {
 
-    Button btnSearch;
+    ImageView ivSearch;
     EditText etSearchField;
     ListView lvSearchResults;
 
@@ -44,11 +45,11 @@ public class SearchActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
 
-        this.btnSearch = findViewById(R.id.btnSearch);
+        this.ivSearch = findViewById(R.id.ivSearch);
         this.etSearchField = findViewById(R.id.etSearchField);
         this.lvSearchResults = findViewById(R.id.lvSearchResults);
 
-        this.btnSearch.setOnClickListener(event -> eventBtnSearch());
+        this.ivSearch.setOnClickListener(event -> eventIvSearch());
 
         lvSearchResults.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -61,7 +62,7 @@ public class SearchActivity extends AppCompatActivity {
     /**
      * Gets the Titles and IDs from the API and displays each title in the list view
      */
-    private void eventBtnSearch() {
+    private void eventIvSearch() {
         try {
             URL url = new URL("https://mcuapi.herokuapp.com/api/v1/movies?page=1&columns=title%2Cid&order=chronology%2CASC&filter=title%3D" + this.etSearchField.getText());
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();

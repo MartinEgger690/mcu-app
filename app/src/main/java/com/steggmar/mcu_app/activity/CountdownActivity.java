@@ -91,7 +91,9 @@ public class CountdownActivity extends AppCompatActivity {
     }
 
     private void eventIvHome(){
-        startActivity(new Intent(CountdownActivity.this, MainActivity.class));
+        Intent intent = new Intent(CountdownActivity.this, MainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
     }
 
     private void eventIvBack(){
@@ -112,7 +114,6 @@ public class CountdownActivity extends AppCompatActivity {
         this.mlOverview.setText(movie.getOverview());
         Picasso.get().load(movie.getPoster_url()).into(this.ivPoster);
     }
-
 
     /**
      * Checks if the device is connected to the internet via Wi-Fi or Mobile Data
