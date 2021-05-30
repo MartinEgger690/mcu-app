@@ -2,7 +2,6 @@ package com.steggmar.mcu_app.activity;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Movie;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -12,7 +11,6 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.steggmar.mcu_app.R;
-import com.steggmar.mcu_app.api.MovieData;
 
 public class MainActivity extends AppCompatActivity {
 
