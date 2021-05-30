@@ -66,6 +66,9 @@ public class CountdownActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Downloads the data for the next movie and writes it into this.movie
+     */
     @SuppressLint("SetTextI18n")
     private void eventBtnNext(){
         // this.movie = new MovieDataSet(this.movie.getRelease_date());
@@ -90,6 +93,9 @@ public class CountdownActivity extends AppCompatActivity {
         updateView();
     }
 
+    /**
+     * Closes this activity and opens the main window
+     */
     private void eventIvHome(){
         Intent intent = new Intent(CountdownActivity.this, MainActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -106,6 +112,9 @@ public class CountdownActivity extends AppCompatActivity {
         // this.movie = this.previousMovie;
     }
 
+    /**
+     * Updates all View-Elements
+     */
     @SuppressLint("SetTextI18n")
     private void updateView(){
         this.tvTitle.setText(movie.getTitle());
