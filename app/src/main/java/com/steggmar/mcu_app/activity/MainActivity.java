@@ -1,5 +1,6 @@
 package com.steggmar.mcu_app.activity;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
@@ -7,6 +8,7 @@ import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -19,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.main_activity);
@@ -29,8 +32,11 @@ public class MainActivity extends AppCompatActivity {
         this.btnLaunchCountdown.setOnClickListener(event -> eventLaunchCountdown());
         this.btnLaunchSearch.setOnClickListener(event -> eventLaunchSearch());
 
-    }
+        if(!checkInternetConnection()){
+            Toast.makeText(getApplicationContext(),"Please check your internet connection!",Toast.LENGTH_LONG).show();
+        }
 
+    }
 
     private void eventLaunchCountdown(){
         Intent intent = new Intent(MainActivity.this, CountdownActivity.class);
