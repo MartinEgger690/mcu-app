@@ -48,18 +48,15 @@ public class SearchActivity extends AppCompatActivity {
 
         this.ivSearch.setOnClickListener(event -> eventIvSearch());
 
-        lvSearchResults.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                System.out.println(parent.getAdapter().getItem(position));
-            }
-        });
+        lvSearchResults.setOnItemClickListener((parent, view, position, id) -> System.out.println(parent.getAdapter().getItem(position)));
+
     }
 
     /**
      * Gets the Titles and IDs from the API and displays each title in the list view
      */
     private void eventIvSearch() {
+
         try {
             URL url = new URL("https://mcuapi.herokuapp.com/api/v1/movies?page=1&columns=title%2Cid&order=chronology%2CASC&filter=title%3D" + this.etSearchField.getText());
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -96,6 +93,7 @@ public class SearchActivity extends AppCompatActivity {
         catch (IOException | JSONException e) {
             e.printStackTrace();
         }
+
     }
 
 }

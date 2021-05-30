@@ -1,6 +1,5 @@
 package com.steggmar.mcu_app.activity;
 
-import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
@@ -42,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
      * Starts the MCU-Countdown
      */
     private void eventLaunchCountdown(){
+
         Intent intent = new Intent(MainActivity.this, CountdownActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
      * Starts the Movie-Search
      */
     private void eventLaunchSearch(){
+
         Intent intent = new Intent(MainActivity.this, SearchActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
@@ -62,9 +63,11 @@ public class MainActivity extends AppCompatActivity {
      * @return true if device is connected.
      */
     private boolean checkInternetConnection(){
+
         ConnectivityManager connectivityManager = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
         return connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
                 connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED;
+
     }
 
 }

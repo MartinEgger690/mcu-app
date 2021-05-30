@@ -38,6 +38,7 @@ public class CountdownActivity extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -63,7 +64,6 @@ public class CountdownActivity extends AppCompatActivity {
         btnNext.setOnClickListener(event -> eventBtnNext());
         ivHome.setOnClickListener(event -> eventIvHome());
         ivBack.setOnClickListener(event -> eventIvBack());
-
     }
 
     /**
@@ -71,19 +71,7 @@ public class CountdownActivity extends AppCompatActivity {
      */
     @SuppressLint("SetTextI18n")
     private void eventBtnNext(){
-        // this.movie = new MovieDataSet(this.movie.getRelease_date());
-
         this.btnNext.setText("NEXT RELEASE");
-
-        /*
-        while(!checkInternetConnection()){
-            setContentView(R.layout.no_connection);
-        }
-        checkInternetConnection();
-         */
-
-
-        // this.previousMovie = this.movie;
         this.movie = this.nextMovie;
         this.nextMovie = new ReleaseData(this.movie.getRelease_date());
         if(this.movie.getFollowing_production() == null){
@@ -103,13 +91,7 @@ public class CountdownActivity extends AppCompatActivity {
     }
 
     private void eventIvBack(){
-        /*
-        if(this.previousMovie == null){
-            // TODO: Load home menu
-        }
-         */
         this.nextMovie = this.movie;
-        // this.movie = this.previousMovie;
     }
 
     /**
