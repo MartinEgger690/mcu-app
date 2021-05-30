@@ -115,14 +115,4 @@ public class CountdownActivity extends AppCompatActivity {
         Picasso.get().load(movie.getPoster_url()).into(this.ivPoster);
     }
 
-    /**
-     * Checks if the device is connected to the internet via Wi-Fi or Mobile Data
-     * @return true if device is connected.
-     */
-    private boolean checkInternetConnection(){
-        ConnectivityManager connectivityManager = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
-        return connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
-                connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED;
-    }
-
 }
