@@ -15,9 +15,6 @@ import com.steggmar.mcu_app.R;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button btnLaunchCountdown;
-    private Button btnLaunchSearch;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -25,11 +22,11 @@ public class MainActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.main_activity);
 
-        this.btnLaunchCountdown = findViewById(R.id.btnLaunchCountdown);
-        this.btnLaunchSearch = findViewById(R.id.btnLaunchSearch);
+        Button btnLaunchCountdown = findViewById(R.id.btnLaunchCountdown);
+        Button btnLaunchSearch = findViewById(R.id.btnLaunchSearch);
 
-        this.btnLaunchCountdown.setOnClickListener(event -> eventLaunchCountdown());
-        this.btnLaunchSearch.setOnClickListener(event -> eventLaunchSearch());
+        btnLaunchCountdown.setOnClickListener(event -> eventLaunchCountdown());
+        btnLaunchSearch.setOnClickListener(event -> eventLaunchSearch());
 
         if(!checkInternetConnection()){
             Toast.makeText(getApplicationContext(),"Please check your internet connection!",Toast.LENGTH_LONG).show();
