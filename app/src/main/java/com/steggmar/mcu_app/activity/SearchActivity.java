@@ -2,8 +2,6 @@ package com.steggmar.mcu_app.activity;
 
 import android.os.Bundle;
 import android.os.StrictMode;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
