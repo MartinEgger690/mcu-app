@@ -1,10 +1,7 @@
 package com.steggmar.mcu_app.activity;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.content.Intent;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -15,7 +12,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.squareup.picasso.Picasso;
 import com.steggmar.mcu_app.R;
-import com.steggmar.mcu_app.api.MovieData;
 import com.steggmar.mcu_app.api.ReleaseData;
 
 public class CountdownActivity extends AppCompatActivity {
