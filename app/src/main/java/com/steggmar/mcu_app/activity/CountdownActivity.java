@@ -28,7 +28,6 @@ public class CountdownActivity extends AppCompatActivity {
 
     private ReleaseData movie;
     private ReleaseData nextMovie;
-    private ReleaseData previousMovie;
 
 
     @SuppressLint("SetTextI18n")
@@ -42,7 +41,6 @@ public class CountdownActivity extends AppCompatActivity {
 
         this.movie = new ReleaseData();
         this.nextMovie = new ReleaseData(this.movie.getRelease_date());
-        this.previousMovie = null;
 
         this.tvTitle = findViewById(R.id.tvTitle);
         this.tvTitle.setSelected(true);
