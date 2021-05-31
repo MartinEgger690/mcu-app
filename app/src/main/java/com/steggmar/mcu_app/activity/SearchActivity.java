@@ -28,7 +28,7 @@ public class SearchActivity extends AppCompatActivity {
     EditText etSearchField;
     ListView lvSearchResults;
 
-    ArrayAdapter arrayAdapter;
+    ArrayAdapter<String> arrayAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,7 +83,7 @@ public class SearchActivity extends AppCompatActivity {
                 movieTitles.add(result.getString("title"));
             }
 
-            this.arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, movieTitles);
+            this.arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, movieTitles);
 
             lvSearchResults.setAdapter(arrayAdapter);
 
