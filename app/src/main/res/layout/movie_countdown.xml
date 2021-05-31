@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -15,7 +13,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_launcher_background" />
+        app:srcCompat="@drawable/ic_launcher_background"
+        android:contentDescription="@string/iv_poster_content_description" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -26,14 +25,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/ivPoster"
-        app:srcCompat="@drawable/gradient" />
+        app:srcCompat="@drawable/gradient"
+        android:contentDescription="@string/iv_gradient_content_description" />
 
     <TextView
         android:id="@+id/tvReleasesInXDays"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="33dp"
-        android:text="releases in X days!"
+        android:text="@string/tv_days_text"
         android:textColor="#C6C6C6"
         android:textSize="30sp"
         android:textStyle="bold"
@@ -46,7 +46,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="33dp"
         android:layout_marginTop="20dp"
-        android:text="[TYPE]"
+        android:text="@string/tv_type_text"
         android:textColor="@color/red"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -62,7 +62,7 @@
         android:layout_marginEnd="120dp"
         android:layout_marginBottom="30dp"
         android:background="@drawable/btn_rounded_corners"
-        android:text="NEXT RELEASE"
+        android:text="@string/btn_next_release_text"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -80,7 +80,7 @@
         android:marqueeRepeatLimit="marquee_forever"
         android:scrollHorizontally="true"
         android:singleLine="true"
-        android:text="[TITLE]"
+        android:text="@string/tv_title_text"
         android:textSize="50sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -111,7 +111,8 @@
         android:scaleY="0.5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/home_icon" />
+        app:srcCompat="@drawable/home_icon"
+        android:contentDescription="@string/iv_home_content_description" />
 
     <ImageView
         android:id="@+id/ivBack"
@@ -123,7 +124,8 @@
         android:scaleY="0.65"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/back_icon" />
+        app:srcCompat="@drawable/back_icon"
+        android:contentDescription="@string/iv_back_content_description" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

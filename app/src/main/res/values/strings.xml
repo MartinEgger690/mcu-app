@@ -3,4 +3,14 @@
     <string name="btn_search_text">Search Movies</string>
     <string name="btn_countdown_text">MCU-Countdown</string>
     <string name="iv_logo_content_description">logo</string>
+
+    <string name="iv_poster_content_description">poster</string>
+    <string name="iv_gradient_content_description">gradient</string>
+    <string name="tv_days_text">releases in [x] days</string>
+    <string name="tv_type_text">releases in x days</string>
+    <string name="btn_next_release_text">NEXT RELEASE</string>
+    <string name="tv_title_text">[TITLE]</string>
+    <string name="iv_home_content_description">home</string>
+    <string name="iv_back_content_description">back</string>
+
 </resources>
