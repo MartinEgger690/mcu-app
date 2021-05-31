@@ -21,8 +21,6 @@ public class CountdownActivity extends AppCompatActivity {
     private TextView tvType;
     private TextView mlOverview;
     private ImageView ivPoster;
-    private ImageView ivHome;
-    private ImageView ivBack;
 
     private Button btnNext;
 
@@ -50,8 +48,8 @@ public class CountdownActivity extends AppCompatActivity {
         this.mlOverview = findViewById(R.id.tvOverview);
         this.ivPoster = findViewById(R.id.ivPoster);
         this.btnNext = findViewById(R.id.btnNext);
-        this.ivHome = findViewById(R.id.ivHome);
-        this.ivBack = findViewById(R.id.ivBack);
+        ImageView ivHome = findViewById(R.id.ivHome);
+        ImageView ivBack = findViewById(R.id.ivBack);
 
         updateView();
 
